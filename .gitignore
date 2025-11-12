@@ -1,0 +1,17 @@
+# Evita subir o ambiente virtual
+venv/
+.venv/
+
+# Arquivos temporários
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Configs locais do VSCode
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db

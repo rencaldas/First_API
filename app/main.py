@@ -1,9 +1,16 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from app.api.v1 import auth, users, products
 
-app = FastAPI(title="Minha API simples")
+# Criação da aplicação FastAPI
+app = FastAPI(title="Rencaldas's API")
 
-# Modelo para requisições POST
+# Registrar as rotas organizadas
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
+app.include_router(users.router, prefix="/users", tags=["users"])
+app.include_router(products.router, prefix="/products", tags=["products"])
+
+# Modelo de exemplo para testar POST
 class Item(BaseModel):
     name: str
     price: float
